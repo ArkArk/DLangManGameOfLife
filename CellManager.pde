@@ -67,14 +67,6 @@ class CellManager {
           lastI = i;
           lastJ = j;
           cellArray[i][j].flipState();
-          if (i==1) cellArray[cellArray.length-1][j].flipState();
-          if (i==cellArray.length-2) cellArray[0][j].flipState();
-          if (j==1) cellArray[i][cellArray[0].length-1].flipState();
-          if (j==cellArray[0].length-2) cellArray[i][0].flipState();
-          if (i==1 && j==1) cellArray[cellArray.length-1][cellArray[0].length-1].flipState();
-          if (i==1 && j==cellArray[0].length-2) cellArray[cellArray.length-1][0].flipState();
-          if (i==cellArray.length-2 && j==1) cellArray[0][cellArray[0].length-1].flipState();
-          if (i==cellArray.length-2 && j==cellArray[0].length-2) cellArray[0][0].flipState();
           return;
         }
       }
