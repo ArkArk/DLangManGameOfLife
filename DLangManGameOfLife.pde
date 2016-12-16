@@ -7,7 +7,7 @@ void setup() {
   size(600, 600);
   imageMode(CENTER);
   rectMode(CENTER);
-  cellImage = loadImage("../images/d-man.gif");
+  cellImage = loadImage("./images/d-man.gif");
   manager = new CellManager(floor(width/CELL_SIZE), floor(width/CELL_SIZE), CELL_SIZE, DURATION_FRAME_COUNT);
   refresh();
 }
