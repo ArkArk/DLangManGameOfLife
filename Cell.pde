@@ -7,6 +7,7 @@ class Cell {
   private boolean state;
   private boolean nextState;
   private Cell[] neighbours;
+  private boolean killedFlg;
 
   Cell(float x, float y, float cellSize) {
     this.x = x;
@@ -33,6 +34,10 @@ class Cell {
       nextState = (cnt==3 || cnt==4);
     } else {
       nextState = (cnt==3);
+    }
+    if (killedFlg) {
+      nextState = false;
+      killedFlg = false;
     }
   }
 
@@ -76,6 +81,14 @@ class Cell {
     stroke(0);
     fill(150, 200, 255, 100);
     rect(x, y, cellSize, cellSize);
+  }
+
+  void kill() {
+    killedFlg = true;
+  }
+
+  void revive() {
+    killedFlg = false;
   }
 
   boolean getState() {

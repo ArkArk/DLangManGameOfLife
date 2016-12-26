@@ -27,6 +27,18 @@ class CellManager {
       cellArray[i][j].setNeighbours(neighbours);
     }
   }
+  
+  void kill() {
+    for(int i=0; i<cellArray.length; i++) for(int j=0; j<cellArray[0].length;  j++) {
+      cellArray[i][j].kill();
+    }
+  }
+  
+  void revive() {
+    for(int i=0; i<cellArray.length; i++) for(int j=0; j<cellArray[0].length;  j++) {
+      cellArray[i][j].revive();
+    }
+  }
 
   void update() {
     updateInput();
@@ -88,5 +100,9 @@ class CellManager {
     for(int i=0; i<cellArray.length; i++) for(int j=0; j<cellArray[0].length;  j++) {
       cellArray[i][j].draw(t);
     }
+  }
+  
+  boolean isActive() {
+    return active;
   }
 }

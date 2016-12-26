@@ -16,6 +16,10 @@ void refresh() {
   manager.refresh();
 }
 
+void kill() {
+  manager.kill();
+}
+
 void draw() {
   background(255);
   manager.update();
@@ -23,6 +27,9 @@ void draw() {
 }
 
 void flipActive() {
+  if (!manager.isActive()) {
+    manager.revive();
+  }
   manager.flipActive();
 }
 
@@ -31,7 +38,11 @@ void keyPressed() {
     flipActive();
   }
   if (keyCode == ENTER) {
-    refresh();
+    if (manager.isActive()) {
+      kill();
+    } else {
+      refresh();
+    }
   }
 }
 
