@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href="./images/dman.ico" type="image/vnd.microsoft.icon">
     <title>DlangMan's Game of Life</title>
-    <script src="./processing.js"></script>
+    <script src="./processing.min.js"></script>
 </head>
 <body>
     <h1>D言語くんライフゲーム</h1>
@@ -19,7 +19,11 @@
         <a href="https://twitter.com/share" class="twitter-share-button" data-text="D言語くんの繁殖シミュレーションをしよう！" data-hashtags="D言語くんライフゲーム">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
-    <canvas data-processing-sources="DLangManGameOfLife.pde CellManager.pde Cell.pde"></canvas>
+    <canvas data-processing-sources="
+        src/DLangManGameOfLife.pde
+        src/CellManager.pde
+        src/Cell.pde
+    "></canvas>
     <div>
         <hr>
         更新履歴
